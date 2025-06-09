@@ -28,6 +28,11 @@ jobs:
         pip install -r requirements.txt
         pip install pytest pytest-asyncio pytest-cov
     
+    - name: Check Python and package versions
+      run: |
+        python --version
+        pip list | grep -E "mcp|pydantic|GitPython"
+    
     - name: Run tests
       run: |
         python -m pytest tests/ -v --cov=git_mcp --cov-report=xml --cov-report=term
