@@ -1,7 +1,5 @@
 # Git MCP Server
 
-[![Test](https://github.com/asklokesh/git-mcp-server/actions/workflows/test.yml/badge.svg)](https://github.com/asklokesh/git-mcp-server/actions/workflows/test.yml)
-
 An MCP (Model Context Protocol) server that provides Git operations as tools for AI assistants.
 
 ## Features
