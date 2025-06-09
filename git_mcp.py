@@ -2,7 +2,7 @@
 
 import asyncio
 import json
-from typing import Optional, List
+from typing import Optional, List, Union
 from mcp.server import Server, NotificationOptions
 from mcp.server.models import InitializationOptions
 import mcp.server.stdio
@@ -45,7 +45,7 @@ server = Server("git-mcp")
 
 
 @server.list_tools()
-async def handle_list_tools() -> list[types.Tool]:
+async def handle_list_tools() -> List[types.Tool]:
     return [
         types.Tool(
             name="git_status",
@@ -83,7 +83,7 @@ async def handle_list_tools() -> list[types.Tool]:
 @server.call_tool()
 async def handle_call_tool(
     name: str, arguments: dict
-) -> list[types.TextContent | types.ImageContent | types.EmbeddedResource]:
+) -> List[Union[types.TextContent, types.ImageContent, types.EmbeddedResource]]:
     try:
         if name == "git_status":
             args = GitStatusArgs(**arguments)
