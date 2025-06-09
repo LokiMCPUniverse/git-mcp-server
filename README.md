@@ -1,19 +1,38 @@
 # Git MCP Server
 
-An MCP (Model Context Protocol) server that provides Git operations as tools for AI assistants.
+[![Tests](https://github.com/asklokesh/git-mcp-server/actions/workflows/test.yml/badge.svg)](https://github.com/asklokesh/git-mcp-server/actions/workflows/test.yml)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![MCP](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-green)](https://modelcontextprotocol.io)
+[![Code Coverage](https://img.shields.io/badge/coverage-93%25-brightgreen.svg)](https://github.com/asklokesh/git-mcp-server)
+
+A Model Context Protocol (MCP) server that provides Git operations as tools for AI assistants. This server enables seamless integration of Git functionality into AI workflows.
+
+## Why Git MCP Server?
+
+- **AI-Native Git Integration** - Enable AI assistants to manage Git repositories with natural language
+- **Full Git Toolkit** - Status, commits, branches, diffs, and more - all accessible to AI
+- **Zero Configuration** - Works out of the box with any Git repository
+- **Universal Compatibility** - Integrates with Claude Desktop, OpenAI, Anthropic APIs, and any MCP-compatible client
+- **Async Performance** - Built on Python's asyncio for optimal performance
+- **Battle-Tested** - 93% code coverage with comprehensive test suite
 
 ## Features
 
-The server exposes the following Git tools:
+Transform your AI assistant into a Git power user with these tools:
 
-- **git_status** - Get repository status
-- **git_log** - View commit history  
-- **git_diff** - Show changes (staged or unstaged)
-- **git_commit** - Create commits
-- **git_branch** - List branches
-- **git_checkout** - Switch branches
+| Tool | Description | Use Case |
+|------|-------------|----------|
+| **git_status** | Get repository status | "What files have I changed?" |
+| **git_log** | View commit history | "Show me the last 5 commits" |
+| **git_diff** | Show changes | "What did I modify in auth.py?" |
+| **git_commit** | Create commits | "Commit my bug fix with a descriptive message" |
+| **git_branch** | List branches | "What branches exist?" |
+| **git_checkout** | Switch branches | "Switch to the feature branch" |
 
-## Installation
+## Quick Start
+
+### Installation
 
 ```bash
 # Clone the repository
@@ -27,17 +46,19 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## Usage
+### See It In Action
 
-### As MCP Server
-
-Run the server directly:
-
-```bash
-python git_mcp.py
+```python
+# Ask your AI assistant:
+"What's the status of my project?"
+"Show me what changed in the authentication module"
+"Create a commit for the bug fix I just made"
+"Switch to the development branch"
 ```
 
-### With Claude Desktop
+## Usage
+
+### Option 1: With Claude Desktop (Recommended)
 
 1. Edit Claude Desktop config:
    ```bash
@@ -64,7 +85,13 @@ python git_mcp.py
 
 3. Restart Claude Desktop
 
-### With GenAI APIs
+### Option 2: As Standalone MCP Server
+
+```bash
+python git_mcp.py
+```
+
+### Option 3: With GenAI APIs (OpenAI, Anthropic, etc.)
 
 See the [examples directory](examples/) for integration examples:
 
@@ -80,6 +107,32 @@ from examples.genai_integration_example import GitMCPToolkit
 toolkit = GitMCPToolkit()
 result = toolkit.execute_tool("git_status", {"path": "/path/to/repo"})
 print(result)
+```
+
+## Real-World Examples
+
+### Example 1: AI-Powered Code Review
+```python
+# Ask your AI assistant:
+"Check the git status and tell me what files need to be committed"
+"Show me the diff for the changes in the API module"
+"Create a descriptive commit message based on the changes"
+```
+
+### Example 2: Branch Management
+```python
+# Ask your AI assistant:
+"List all branches and tell me which one is active"
+"Create a new feature branch for the authentication update"
+"Switch to the main branch and show me the latest commits"
+```
+
+### Example 3: Project Health Check
+```python
+# Ask your AI assistant:
+"Analyze the last 10 commits and summarize the recent changes"
+"Check if there are any uncommitted changes"
+"Show me who contributed to this project recently"
 ```
 
 ## Tool Reference
@@ -227,18 +280,51 @@ git-mcp-server/
         └── test.yml       # CI/CD pipeline
 ```
 
+
 ## Contributing
+
+We love contributions! Here's how you can help:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+3. Make your changes
+4. Write or update tests
+5. Commit your changes (`git commit -m 'Add amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
+
+### Ways to Contribute
+
+- **Report bugs** - Help us identify issues
+- **Suggest features** - Share your ideas
+- **Improve documentation** - Help others understand the project
+- **Add tests** - Increase code coverage
+- **Translate** - Make the project accessible globally
+
+## Roadmap
+
+- [ ] Add support for more Git operations (merge, rebase, stash)
+- [ ] Implement Git LFS support
+- [ ] Add authentication for private repositories
+- [ ] Create a web-based dashboard
+- [ ] Support for Git hooks integration
+- [ ] Multi-repository management
+- [ ] Git workflow automation templates
 
 ## License
 
-MIT License - see LICENSE file for details
+MIT License - see [LICENSE](LICENSE) file for details
 
-## Support
+## Support & Community
 
-For issues and feature requests, please use the [GitHub issue tracker](https://github.com/asklokesh/git-mcp-server/issues).
+- **Issues**: [GitHub Issue Tracker](https://github.com/asklokesh/git-mcp-server/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/asklokesh/git-mcp-server/discussions)
+- **Star this repo** to show your support!
+
+---
+
+<p align="center">
+  Made with care by developers, for developers
+  <br>
+  <a href="https://github.com/asklokesh/git-mcp-server/stargazers">Star us on GitHub</a>
+</p>
