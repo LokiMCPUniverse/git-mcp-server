@@ -3,8 +3,8 @@ GitPython>=3.1.0
 pydantic>=2.0.0
 
 # Optional: For API integration
-fastapi>=0.100.0
-uvicorn>=0.23.0
+# fastapi>=0.100.0
+# uvicorn>=0.23.0
 
 # Optional: For GenAI integration examples
 # openai>=1.0.0
