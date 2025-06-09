@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "git-mcp": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/Users/lokesh/git/MCP-Servers/git-mcp",
+        "run",
+        "git_mcp.py"
+      ]
+    }
+  }
+}

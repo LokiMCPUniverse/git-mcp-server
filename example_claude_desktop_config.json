@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "git-mcp": {
+      "command": "python",
+      "args": [
+        "/Users/lokesh/git/MCP-Servers/git-mcp/git_mcp.py"
+      ]
+    }
+  }
+}
