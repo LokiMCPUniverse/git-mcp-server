@@ -1,7 +1,7 @@
 # Git MCP Server
 
 [![Tests](https://github.com/asklokesh/git-mcp-server/actions/workflows/test.yml/badge.svg)](https://github.com/asklokesh/git-mcp-server/actions/workflows/test.yml)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![MCP](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-green)](https://modelcontextprotocol.io)
 [![Code Coverage](https://img.shields.io/badge/coverage-93%25-brightgreen.svg)](https://github.com/asklokesh/git-mcp-server)
