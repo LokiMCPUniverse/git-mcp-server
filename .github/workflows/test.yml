@@ -33,13 +33,11 @@ jobs:
         python --version
         pip list | grep -E "mcp|pydantic|GitPython"
     
+    - name: Test imports
+      run: |
+        python -c "import git_mcp; print('git_mcp imported successfully')"
+        python -c "import mcp; print(f'mcp version: {mcp.__version__ if hasattr(mcp, \"__version__\") else \"unknown\"}')"
+    
     - name: Run tests
       run: |
-        python -m pytest tests/ -v --cov=git_mcp --cov-report=xml --cov-report=term
-    
-    - name: Upload coverage to Codecov
-      if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
-      uses: codecov/codecov-action@v3
-      with:
-        file: ./coverage.xml
-        fail_ci_if_error: true
+        python -m pytest tests/ -v --tb=short
