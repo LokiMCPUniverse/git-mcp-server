@@ -1,0 +1,14 @@
+# Development and optional dependencies
+
+# Testing
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.0.0
+
+# Optional: For API integration
+fastapi>=0.100.0
+uvicorn>=0.23.0
+
+# Optional: For GenAI integration examples
+# openai>=1.0.0
+# anthropic>=0.3.0
